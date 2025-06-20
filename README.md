@@ -40,7 +40,7 @@ For example
 
 ```php
 
-namespace App\Models\Compte;
+namespace App\Models;
 
 use SmartSelect\Contracts\HasDefaultSelectColumns;
 use SmartSelect\Traits\HasDefaultSelect;
