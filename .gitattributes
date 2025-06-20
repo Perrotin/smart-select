@@ -1,0 +1,9 @@
+.gitlab-ci.yml export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore
+.php-cs-fixer.cache export-ignore
+vendor export-ignore
+VERSION export-ignore
+README.md export-ignore
+composer.lock export-ignore
+phpstan.neon export-ignore

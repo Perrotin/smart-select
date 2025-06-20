@@ -1,0 +1,14 @@
+parameters:
+    paths:
+        - src/
+
+    level: 5
+
+    ignoreErrors:
+
+        # Ignorer les helpers Laravel
+        - '#Function now not found#'
+        - '#Function config not found#'
+        - '#Function app_path not found#'
+        - '#Function config_path not found#'
+        - '#Trait SmartSelect\\Traits\\HasDefaultSelect is used zero times and is not analysed#'

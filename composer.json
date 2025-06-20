@@ -1,0 +1,48 @@
+{
+    "name" : "perrotin/smart-select",
+    "description" : "A tool that will allow you set default select to your model and create the database user with the limited grants.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Thomas Phlippoteau",
+            "email": "tom.phlippoteau@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/console": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/filesystem": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/database": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "symfony/yaml": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^9.0",
+        "phpstan/phpstan": "^2.1"
+    },
+    "archive": {
+        "exclude": [
+            "tests",
+            "*.md",
+            "*.neon",
+            ".gitignore",
+            ".gitattributes",
+            "phpunit.xml",
+            "phpstan.neon",
+            ".github",
+            "docs"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "SmartSelect\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SmartSelect\\Providers\\SmartSelectServiceProvider"
+            ]
+        }
+    }
+}
