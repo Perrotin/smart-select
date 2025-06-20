@@ -1,6 +1,8 @@
 {
     "name" : "perrotin/smart-select",
-    "description" : "A tool that will allow you set default select to your model and create the database user with the limited grants.",
+    "description": "A tool that will allow you set default select to your model and create the database user with the limited grants.",
+    "keywords": ["laravel", "database", "mysql", "grants", "smart-select", "model"],
+    "license": "MIT",
     "type": "library",
     "authors": [
         {
