@@ -18,8 +18,12 @@ class DatabaseStructureHelper
 			$table = $model->getTable();
 
 			foreach ($defaultColumns as $type => $cols) {
-				foreach ($cols as $col) {
-					$data[$table][$type][] = $col;
+				if (is_array($cols)) {
+					foreach ($cols as $col) {
+						$data[$table][$type][] = $col;
+					}
+				} elseif ('delete' === $type) {
+					$data[$table][$type][] = '';
 				}
 			}
 		}
