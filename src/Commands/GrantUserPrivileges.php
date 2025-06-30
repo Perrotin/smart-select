@@ -49,9 +49,14 @@ class GrantUserPrivileges extends Command
 
 			foreach ($types as $type => $columns) {
 				if (in_array(strtoupper($type), config('smart-select.db.allowed_actions'))) {
-					$cols = implode(',', $columns);
 					$grant_type = strtoupper($type);
-					$sql = "GRANT {$grant_type} ({$cols}) ON {$config_base}.{$table} TO '{$config_user}'@'{$config_ip}';";
+					$this->info("type {$grant_type}");
+					if ('DELETE' === $grant_type) {
+						$sql = "GRANT DELETE ON {$config_base}.{$table} TO '{$config_user}'@'{$config_ip}';";
+					} else {
+						$cols = implode(',', $columns);
+						$sql = "GRANT {$grant_type} ({$cols}) ON {$config_base}.{$table} TO '{$config_user}'@'{$config_ip}';";
+					}
 
 					DB::connection('smart-select')->unprepared($sql);
 
