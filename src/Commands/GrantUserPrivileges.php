@@ -54,7 +54,7 @@ class GrantUserPrivileges extends Command
 					if ('DELETE' === $grant_type) {
 						$sql = "GRANT DELETE ON {$config_base}.{$table} TO '{$config_user}'@'{$config_ip}';";
 					} else {
-						$cols = implode(',', $columns);
+						$cols = implode(',', array_map(fn($col) => "`{$col}`", $columns));
 						$sql = "GRANT {$grant_type} ({$cols}) ON {$config_base}.{$table} TO '{$config_user}'@'{$config_ip}';";
 					}
 
