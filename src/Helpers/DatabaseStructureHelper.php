@@ -20,7 +20,7 @@ class DatabaseStructureHelper
 			foreach ($defaultColumns as $type => $cols) {
 				if (is_array($cols)) {
 					foreach ($cols as $col) {
-						$data[$table][$type][] = $col;
+						$data[$table][$type][] = str_contains($col, '.') ? explode('.', $col, 2)[1] : $col;
 					}
 				} elseif ('delete' === $type) {
 					$data[$table][$type][] = '';
